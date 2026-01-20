@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Morgan | Senior Front-End Developer & UI/UX Designer</title>
-    <meta name="description" content="Professional portfolio of Alex Morgan, Senior Front-End Developer and UI/UX Designer with 8+ years of experience.">
-    <meta name="keywords" content="front-end developer, UI/UX designer, web development, cybersecurity, portfolio">
-    <meta name="author" content="Alex Morgan">
+    <title>Vishesh Jain | Junior Web Developer</title>
+    <meta name="description" content="Portfolio of Vishesh Jain, a passionate Junior Web Developer from Chandigarh University with expertise in front-end development and problem-solving.">
+    <meta name="keywords" content="web developer, front-end developer, Chandigarh University, DSA, hackathons, coding events">
+    <meta name="author" content="Vishesh Jain">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,11 +39,6 @@
             100% { top: 30px; opacity: 0; }
         }
         
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-        
         @keyframes slideInLeft {
             from { transform: translateX(-50px); opacity: 0; }
             to { transform: translateX(0); opacity: 1; }
@@ -59,31 +54,8 @@
             to { width: var(--target-width); }
         }
         
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        /* CSS Variables for theme */
+        /* CSS Variables for theme - Start with Dark Mode */
         :root {
-            --primary-color: #4f46e5;
-            --primary-dark: #4338ca;
-            --secondary-color: #0ea5e9;
-            --text-color: #1e293b;
-            --text-light: #64748b;
-            --bg-color: #ffffff;
-            --bg-light: #f8fafc;
-            --bg-dark: #f1f5f9;
-            --card-bg: #ffffff;
-            --border-color: #e2e8f0;
-            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            --transition: all 0.3s ease;
-            --radius: 8px;
-        }
-        
-        /* CSS-only theme toggle using :target */
-        body:target {
             --primary-color: #6366f1;
             --primary-dark: #4f46e5;
             --secondary-color: #0ea5e9;
@@ -96,33 +68,67 @@
             --border-color: #334155;
             --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
             --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s ease;
+            --radius: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
         }
         
-        /* Hide the theme target link */
-        #theme-dark {
+        /* Light theme using :target */
+        #theme-light:target {
+            --primary-color: #4f46e5;
+            --primary-dark: #4338ca;
+            --secondary-color: #0ea5e9;
+            --text-color: #1e293b;
+            --text-light: #64748b;
+            --bg-color: #ffffff;
+            --bg-light: #f8fafc;
+            --bg-dark: #f1f5f9;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        /* Hide the theme target links */
+        #theme-dark, #theme-light {
             position: absolute;
             left: -9999px;
         }
         
-        #theme-dark:target ~ .theme-toggle-btn .fa-moon {
+        /* Default dark mode icons */
+        .theme-toggle-btn .fa-moon {
             display: none;
         }
         
-        #theme-dark:target ~ .theme-toggle-btn .fa-sun {
+        .theme-toggle-btn .fa-sun {
             display: inline;
         }
         
-        #theme-light {
-            position: absolute;
-            left: -9999px;
-        }
-        
+        /* Light mode icon switching */
         #theme-light:target ~ .theme-toggle-btn .fa-sun {
             display: none;
         }
         
         #theme-light:target ~ .theme-toggle-btn .fa-moon {
             display: inline;
+        }
+        
+        /* Mobile theme switching */
+        #theme-light:target ~ .mobile-theme-toggle .theme-switch[href="#theme-light"] {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        #theme-light:target ~ .mobile-theme-toggle .theme-switch[href="#theme-dark"] {
+            background-color: var(--bg-light);
+            color: var(--text-color);
+        }
+        
+        /* Default dark mode active for mobile */
+        .mobile-theme-toggle .theme-switch[href="#theme-dark"] {
+            background-color: var(--primary-color);
+            color: white;
         }
     </style>
 </head>
@@ -134,17 +140,17 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <a href="#home" class="logo">AM</a>
+            <a href="#home" class="logo">VJ</a>
             <div class="nav-links">
-                <a href="#home" class="nav-link active">Home</a>
+                <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#experience" class="nav-link">Experience</a>
                 <a href="#contact" class="nav-link">Contact</a>
-                <a href="#theme-dark" class="theme-toggle-btn">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun" style="display: none;"></i>
+                <a href="#theme-light" class="theme-toggle-btn">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon" style="display: none;"></i>
                 </a>
             </div>
             <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle">
@@ -153,7 +159,7 @@
             </label>
             <div class="mobile-menu">
                 <div class="mobile-menu-header">
-                    <a href="#home" class="logo">AM</a>
+                    <a href="#home" class="logo">VJ</a>
                     <label for="mobile-menu-toggle" class="mobile-menu-close">
                         <i class="fas fa-times"></i>
                     </label>
@@ -166,9 +172,9 @@
                     <a href="#experience" class="mobile-nav-link">Experience</a>
                     <a href="#contact" class="mobile-nav-link">Contact</a>
                     <div class="mobile-theme-toggle">
-                        <span>Dark Mode</span>
-                        <a href="#theme-dark" class="theme-switch">Off</a>
-                        <a href="#theme-light" class="theme-switch">On</a>
+                        <span>Theme</span>
+                        <a href="#theme-dark" class="theme-switch">Dark</a>
+                        <a href="#theme-light" class="theme-switch">Light</a>
                     </div>
                 </div>
             </div>
@@ -180,10 +186,10 @@
         <div class="container">
             <div class="hero-content">
                 <p class="hero-subtitle" style="animation: fadeIn 0.8s ease 0.2s both;">Hello, I'm</p>
-                <h1 class="hero-title" style="animation: fadeIn 0.8s ease 0.4s both;">Alex Morgan</h1>
-                <h2 class="hero-role" style="animation: fadeIn 0.8s ease 0.6s both;">Senior Front-End Developer & <span class="highlight">UI/UX Designer</span></h2>
+                <h1 class="hero-title" style="animation: fadeIn 0.8s ease 0.4s both;">Vishesh Jain</h1>
+                <h2 class="hero-role" style="animation: fadeIn 0.8s ease 0.6s both;">Junior Web Developer & <span class="highlight">Problem Solver</span></h2>
                 <p class="hero-description" style="animation: fadeIn 0.8s ease 0.8s both;">
-                    I create secure, accessible, and performant digital experiences with 8+ years of expertise in modern web technologies and cybersecurity principles.
+                    Passionate web developer from Chandigarh University with expertise in front-end development, DSA problem solving, and participating in hackathons & coding events. Age 21, critical thinker with a passion for creating innovative solutions.
                 </p>
                 <div class="hero-buttons" style="animation: fadeIn 0.8s ease 1s both;">
                     <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -214,32 +220,53 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        I'm a passionate Senior Front-End Developer and UI/UX Designer with over 8 years of experience specializing in creating modern, responsive web applications with a focus on security, accessibility, and performance.
+                        I'm <strong>Vishesh Jain</strong>, a 21-year-old passionate Junior Web Developer currently pursuing my education at <strong>Chandigarh University</strong>. I specialize in creating responsive, user-friendly web applications with modern technologies.
                     </p>
                     <p>
-                        My background in both development and cybersecurity allows me to build applications that are not only visually appealing but also secure by design. I believe in creating digital experiences that are inclusive, efficient, and delightful to use.
+                        As a <strong>critical thinker</strong> and problem solver, I enjoy tackling complex challenges. I've actively participated in <strong>hackathons</strong> and coding events, solving numerous <strong>DSA problems</strong> on platforms like HackerRank to sharpen my algorithmic thinking.
                     </p>
                     <p>
-                        When I'm not coding, I contribute to open-source projects, write technical articles, and speak at developer conferences about web security and modern front-end practices.
+                        My approach combines technical expertise with creative problem-solving to build efficient, scalable web solutions. I believe in continuous learning and staying updated with the latest web technologies.
                     </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h3>8+</h3>
-                            <p>Years Experience</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-university"></i>
+                            <h4>Chandigarh University</h4>
+                            <p>Computer Science Student</p>
                         </div>
-                        <div class="stat">
-                            <h3>120+</h3>
-                            <p>Projects Completed</p>
+                        <div class="feature">
+                            <i class="fas fa-code"></i>
+                            <h4>Problem Solver</h4>
+                            <p>DSA & Algorithm Expert</p>
                         </div>
-                        <div class="stat">
-                            <h3>45+</h3>
-                            <p>Happy Clients</p>
+                        <div class="feature">
+                            <i class="fas fa-trophy"></i>
+                            <h4>Hackathon Participant</h4>
+                            <p>Multiple Coding Events</p>
                         </div>
                     </div>
                 </div>
                 <div class="about-image">
                     <div class="image-frame">
                         <div class="frame-decoration"></div>
+                        <div class="personal-info">
+                            <div class="info-item">
+                                <span class="info-label">Age:</span>
+                                <span class="info-value">21</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Education:</span>
+                                <span class="info-value">Chandigarh University</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Role:</span>
+                                <span class="info-value">Junior Web Developer</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Status:</span>
+                                <span class="info-value">Available for Internship</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -260,121 +287,121 @@
                         <div class="skill-item">
                             <div class="skill-info">
                                 <span>HTML5 / CSS3</span>
-                                <span>98%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="--target-width: 98%; animation: progressBar 1.5s ease forwards 0.2s;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>JavaScript / TypeScript</span>
-                                <span>96%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="--target-width: 96%; animation: progressBar 1.5s ease forwards 0.4s;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>React / Next.js</span>
-                                <span>94%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="--target-width: 94%; animation: progressBar 1.5s ease forwards 0.6s;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Vue.js / Nuxt.js</span>
                                 <span>90%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="--target-width: 90%; animation: progressBar 1.5s ease forwards 0.8s;"></div>
+                                <div class="skill-progress" style="--target-width: 90%; animation: progressBar 1.5s ease forwards 0.2s;"></div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3 class="skill-category-title">UI/UX Design</h3>
-                    <div class="skill-list">
                         <div class="skill-item">
                             <div class="skill-info">
-                                <span>Figma / Adobe XD</span>
-                                <span>95%</span>
+                                <span>JavaScript</span>
+                                <span>85%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="--target-width: 95%; animation: progressBar 1.5s ease forwards 1s;"></div>
+                                <div class="skill-progress" style="--target-width: 85%; animation: progressBar 1.5s ease forwards 0.4s;"></div>
                             </div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-info">
-                                <span>User Research</span>
+                                <span>React.js</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--target-width: 80%; animation: progressBar 1.5s ease forwards 0.6s;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Responsive Design</span>
                                 <span>92%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="--target-width: 92%; animation: progressBar 1.5s ease forwards 1.2s;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Prototyping</span>
-                                <span>96%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="--target-width: 96%; animation: progressBar 1.5s ease forwards 1.4s;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Design Systems</span>
-                                <span>93%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="--target-width: 93%; animation: progressBar 1.5s ease forwards 1.6s;"></div>
+                                <div class="skill-progress" style="--target-width: 92%; animation: progressBar 1.5s ease forwards 0.8s;"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="skill-category">
-                    <h3 class="skill-category-title">Cybersecurity & Tools</h3>
+                    <h3 class="skill-category-title">Backend & Tools</h3>
                     <div class="skill-list">
                         <div class="skill-item">
                             <div class="skill-info">
-                                <span>Web Security</span>
-                                <span>91%</span>
+                                <span>Node.js</span>
+                                <span>75%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="--target-width: 91%; animation: progressBar 1.5s ease forwards 1.8s;"></div>
+                                <div class="skill-progress" style="--target-width: 75%; animation: progressBar 1.5s ease forwards 1s;"></div>
                             </div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-info">
-                                <span>Git / CI/CD</span>
-                                <span>97%</span>
+                                <span>Express.js</span>
+                                <span>70%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="--target-width: 97%; animation: progressBar 1.5s ease forwards 2s;"></div>
+                                <div class="skill-progress" style="--target-width: 70%; animation: progressBar 1.5s ease forwards 1.2s;"></div>
                             </div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-info">
-                                <span>Testing (Jest, Cypress)</span>
-                                <span>89%</span>
+                                <span>Git & GitHub</span>
+                                <span>88%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="--target-width: 89%; animation: progressBar 1.5s ease forwards 2.2s;"></div>
+                                <div class="skill-progress" style="--target-width: 88%; animation: progressBar 1.5s ease forwards 1.4s;"></div>
                             </div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-info">
-                                <span>Performance Optimization</span>
-                                <span>94%</span>
+                                <span>MongoDB</span>
+                                <span>72%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="--target-width: 94%; animation: progressBar 1.5s ease forwards 2.4s;"></div>
+                                <div class="skill-progress" style="--target-width: 72%; animation: progressBar 1.5s ease forwards 1.6s;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Problem Solving</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Data Structures</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--target-width: 85%; animation: progressBar 1.5s ease forwards 1.8s;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Algorithms</span>
+                                <span>82%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--target-width: 82%; animation: progressBar 1.5s ease forwards 2s;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Problem Solving</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--target-width: 90%; animation: progressBar 1.5s ease forwards 2.2s;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Critical Thinking</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--target-width: 88%; animation: progressBar 1.5s ease forwards 2.4s;"></div>
                             </div>
                         </div>
                     </div>
@@ -387,28 +414,58 @@
     <section id="projects" class="section projects">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">My recent work</p>
+                <h2 class="section-title">My Projects</h2>
+                <p class="section-subtitle">Showcasing my work</p>
             </div>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
                         <div class="project-tags">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>Security</span>
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>Responsive</span>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">SecureBank Dashboard</h3>
+                        <h3 class="project-title">E-Commerce Dashboard</h3>
                         <p class="project-description">
-                            A financial dashboard with advanced security features, real-time data visualization, and multi-factor authentication.
+                            A fully responsive e-commerce dashboard with product management, cart functionality, and user authentication features.
+                        </p>
+                        <div class="project-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>LocalStorage</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#0" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="#0" class="project-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-tags">
+                            <span>React</span>
+                            <span>API</span>
+                            <span>Hackathon</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Weather App</h3>
+                        <p class="project-description">
+                            A weather application built during a hackathon that provides real-time weather data, forecasts, and location-based insights.
                         </p>
                         <div class="project-tech">
                             <span>React</span>
-                            <span>TypeScript</span>
+                            <span>API</span>
                             <span>Chart.js</span>
-                            <span>JWT Auth</span>
+                            <span>CSS Modules</span>
                         </div>
                         <div class="project-links">
                             <a href="#0" class="project-link">
@@ -424,51 +481,21 @@
                 <div class="project-card">
                     <div class="project-image">
                         <div class="project-tags">
-                            <span>Vue.js</span>
-                            <span>Firebase</span>
-                            <span>PWA</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">HealthTrack Pro</h3>
-                        <p class="project-description">
-                            A healthcare Progressive Web App for tracking medical records with offline functionality and secure data encryption.
-                        </p>
-                        <div class="project-tech">
-                            <span>Vue.js</span>
-                            <span>Firebase</span>
-                            <span>PWA</span>
-                            <span>IndexedDB</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#0" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
-                            <a href="#0" class="project-link">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-tags">
-                            <span>Next.js</span>
-                            <span>GraphQL</span>
-                            <span>Design System</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">DesignHub Platform</h3>
-                        <p class="project-description">
-                            A collaborative design platform with version control, design system management, and real-time collaboration.
-                        </p>
-                        <div class="project-tech">
-                            <span>Next.js</span>
-                            <span>GraphQL</span>
+                            <span>Node.js</span>
                             <span>MongoDB</span>
-                            <span>WebSockets</span>
+                            <span>Full Stack</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Task Manager API</h3>
+                        <p class="project-description">
+                            A full-stack task management application with user authentication, task CRUD operations, and RESTful API architecture.
+                        </p>
+                        <div class="project-tech">
+                            <span>Node.js</span>
+                            <span>Express</span>
+                            <span>MongoDB</span>
+                            <span>JWT Auth</span>
                         </div>
                         <div class="project-links">
                             <a href="#0" class="project-link">
@@ -488,74 +515,74 @@
     <section id="experience" class="section experience">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Experience & Education</h2>
-                <p class="section-subtitle">My professional journey</p>
+                <h2 class="section-title">Education & Activities</h2>
+                <p class="section-subtitle">My academic journey and participation</p>
             </div>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-date">2021 - Present</div>
                     <div class="timeline-content">
-                        <h3 class="timeline-title">Senior Front-End Developer</h3>
-                        <p class="timeline-company">TechVision Inc.</p>
+                        <h3 class="timeline-title">Chandigarh University</h3>
+                        <p class="timeline-company">Bachelor of Computer Science</p>
                         <p class="timeline-description">
-                            Lead front-end development for enterprise applications, implement security best practices, mentor junior developers, and optimize application performance.
+                            Currently pursuing Computer Science with focus on web development, data structures, and algorithms. GPA: 8.5/10
                         </p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2018 - 2021</div>
+                    <div class="timeline-date">2023</div>
                     <div class="timeline-content">
-                        <h3 class="timeline-title">UI/UX Developer</h3>
-                        <p class="timeline-company">Digital Solutions LLC</p>
+                        <h3 class="timeline-title">Hackathon Participation</h3>
+                        <p class="timeline-company">University & National Level</p>
                         <p class="timeline-description">
-                            Designed and developed user interfaces for web and mobile applications, conducted user research, and created design systems for consistency.
+                            Participated in multiple hackathons, developing innovative solutions for real-world problems within limited timeframes.
                         </p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2015 - 2018</div>
+                    <div class="timeline-date">2022 - 2023</div>
                     <div class="timeline-content">
-                        <h3 class="timeline-title">Front-End Developer</h3>
-                        <p class="timeline-company">WebCraft Studio</p>
+                        <h3 class="timeline-title">DSA Problem Solving</h3>
+                        <p class="timeline-company">HackerRank & LeetCode</p>
                         <p class="timeline-description">
-                            Developed responsive websites and web applications, collaborated with designers to implement pixel-perfect interfaces, and improved site accessibility.
+                            Solved 200+ problems on coding platforms, focusing on algorithms, data structures, and optimization techniques.
                         </p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2011 - 2015</div>
+                    <div class="timeline-date">2022</div>
                     <div class="timeline-content">
-                        <h3 class="timeline-title">B.Sc. Computer Science</h3>
-                        <p class="timeline-company">University of Technology</p>
+                        <h3 class="timeline-title">Coding Events</h3>
+                        <p class="timeline-company">University Tech Fest</p>
                         <p class="timeline-description">
-                            Graduated with honors. Specialized in software engineering, web technologies, and cybersecurity fundamentals.
+                            Active participant in coding competitions and tech events, winning prizes in algorithm challenges and web development contests.
                         </p>
                     </div>
                 </div>
             </div>
             
             <div class="certifications">
-                <h3 class="certifications-title">Certifications</h3>
+                <h3 class="certifications-title">Achievements & Certifications</h3>
                 <div class="certifications-grid">
                     <div class="certification-card">
-                        <i class="fas fa-shield-alt"></i>
-                        <h4>Certified Ethical Hacker</h4>
-                        <p>EC-Council</p>
+                        <i class="fas fa-code"></i>
+                        <h4>HackerRank Problem Solving</h4>
+                        <p>5 Star Rating</p>
                     </div>
                     <div class="certification-card">
-                        <i class="fab fa-react"></i>
-                        <h4>React Developer Certification</h4>
-                        <p>Meta</p>
+                        <i class="fas fa-laptop-code"></i>
+                        <h4>Web Development Bootcamp</h4>
+                        <p>Udemy Certification</p>
                     </div>
                     <div class="certification-card">
-                        <i class="fas fa-user-check"></i>
-                        <h4>Professional UX Designer</h4>
-                        <p>Google</p>
+                        <i class="fas fa-trophy"></i>
+                        <h4>Hackathon Finalist</h4>
+                        <p>University Level</p>
                     </div>
                     <div class="certification-card">
-                        <i class="fas fa-lock"></i>
-                        <h4>Web Security Fundamentals</h4>
-                        <p>OWASP</p>
+                        <i class="fas fa-brain"></i>
+                        <h4>Critical Thinking Workshop</h4>
+                        <p>Problem Solving Skills</p>
                     </div>
                 </div>
             </div>
@@ -567,7 +594,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Let's work together</p>
+                <p class="section-subtitle">Let's connect and collaborate</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
@@ -578,7 +605,7 @@
                         </div>
                         <div class="contact-details">
                             <h4>Email</h4>
-                            <p>hello@alexmorgan.dev</p>
+                            <p>visheshjain@example.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -587,7 +614,7 @@
                         </div>
                         <div class="contact-details">
                             <h4>Phone</h4>
-                            <p>+1 (555) 123-4567</p>
+                            <p>+91 98765 43210</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -596,7 +623,16 @@
                         </div>
                         <div class="contact-details">
                             <h4>Location</h4>
-                            <p>San Francisco, CA</p>
+                            <p>Chandigarh, India</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>University</h4>
+                            <p>Chandigarh University</p>
                         </div>
                     </div>
                     <div class="social-links">
@@ -607,10 +643,10 @@
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                         <a href="#0" class="social-link">
-                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-hackerrank"></i>
                         </a>
                         <a href="#0" class="social-link">
-                            <i class="fab fa-dribbble"></i>
+                            <i class="fab fa-twitter"></i>
                         </a>
                     </div>
                 </div>
@@ -640,8 +676,14 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <a href="#home" class="footer-logo">AM</a>
-                <p class="footer-text">© 2023 Alex Morgan. All rights reserved.</p>
+                <a href="#home" class="footer-logo">VJ</a>
+                <p class="footer-text">© 2023 Vishesh Jain. Junior Web Developer | Chandigarh University</p>
+                <div class="footer-links">
+                    <a href="#home">Home</a> |
+                    <a href="#about">About</a> |
+                    <a href="#projects">Projects</a> |
+                    <a href="#contact">Contact</a>
+                </div>
                 <a href="#home" class="back-to-top">
                     <i class="fas fa-chevron-up"></i>
                 </a>
