@@ -1,7 +1,4 @@
-/* ===============================
-   Reset & Base Styles
-================================ */
-
+/* Reset & Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -28,21 +25,31 @@ body {
   padding: 0 20px;
 }
 
-/* ===============================
-   Sections
-================================ */
-
 .section {
   padding: 100px 0;
   opacity: 0;
   animation: fadeIn 0.8s ease forwards;
 }
 
-.section:nth-child(2) { animation-delay: 0.1s; }
-.section:nth-child(3) { animation-delay: 0.2s; }
-.section:nth-child(4) { animation-delay: 0.3s; }
-.section:nth-child(5) { animation-delay: 0.4s; }
-.section:nth-child(6) { animation-delay: 0.5s; }
+.section:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.section:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.section:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.section:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.section:nth-child(6) {
+  animation-delay: 0.5s;
+}
 
 .section-header {
   text-align: center;
@@ -73,10 +80,7 @@ body {
   color: var(--primary-color);
 }
 
-/* ===============================
-   Typography
-================================ */
-
+/* Typography */
 h1,
 h2,
 h3,
@@ -95,10 +99,7 @@ a {
   color: inherit;
 }
 
-/* ===============================
-   Buttons
-================================ */
-
+/* Buttons */
 .btn {
   display: inline-block;
   padding: 12px 28px;
@@ -134,10 +135,7 @@ a {
   transform: translateY(-2px);
 }
 
-/* ===============================
-   Navigation
-================================ */
-
+/* Navigation */
 .navbar {
   position: fixed;
   top: 0;
@@ -203,10 +201,7 @@ a {
   color: var(--primary-color);
 }
 
-/* ===============================
-   Hero Section
-================================ */
-
+/* Hero Section */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -254,10 +249,7 @@ a {
   color: var(--text-light);
 }
 
-/* ===============================
-   Footer
-================================ */
-
+/* Footer */
 .footer {
   background-color: var(--bg-light);
   padding: 40px 0;
