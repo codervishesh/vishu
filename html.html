@@ -4,26 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alex Morgan | Senior Front-End Developer & UI/UX Designer</title>
-    <meta name="description" content="Professional portfolio of Alex Morgan, Senior Front-End Developer and UI/UX Designer with 8+ years of experience in creating modern web applications.">
-    <meta name="keywords" content="front-end developer, UI/UX designer, web development, cybersecurity, JavaScript, React, portfolio">
+    <meta name="description" content="Professional portfolio of Alex Morgan, Senior Front-End Developer and UI/UX Designer with 8+ years of experience.">
+    <meta name="keywords" content="front-end developer, UI/UX designer, web development, cybersecurity, portfolio">
     <meta name="author" content="Alex Morgan">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourusername.github.io/">
-    <meta property="og:title" content="Alex Morgan | Senior Front-End Developer & UI/UX Designer">
-    <meta property="og:description" content="Professional portfolio showcasing modern web development and design projects.">
-    <meta property="og:image" content="https://yourusername.github.io/assets/images/og-image.png">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://yourusername.github.io/">
-    <meta property="twitter:title" content="Alex Morgan | Senior Front-End Developer & UI/UX Designer">
-    <meta property="twitter:description" content="Professional portfolio showcasing modern web development and design projects.">
-    <meta property="twitter:image" content="https://yourusername.github.io/assets/images/og-image.png">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,20 +18,123 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+    
+    <style>
+        /* CSS-only animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes scroll {
+            0% { top: 10px; opacity: 1; }
+            100% { top: 30px; opacity: 0; }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        @keyframes slideInLeft {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideInRight {
+            from { transform: translateX(50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes progressBar {
+            from { width: 0; }
+            to { width: var(--target-width); }
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        /* CSS Variables for theme */
+        :root {
+            --primary-color: #4f46e5;
+            --primary-dark: #4338ca;
+            --secondary-color: #0ea5e9;
+            --text-color: #1e293b;
+            --text-light: #64748b;
+            --bg-color: #ffffff;
+            --bg-light: #f8fafc;
+            --bg-dark: #f1f5f9;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --transition: all 0.3s ease;
+            --radius: 8px;
+        }
+        
+        /* CSS-only theme toggle using :target */
+        body:target {
+            --primary-color: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary-color: #0ea5e9;
+            --text-color: #f8fafc;
+            --text-light: #cbd5e1;
+            --bg-color: #0f172a;
+            --bg-light: #1e293b;
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
+            --border-color: #334155;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Hide the theme target link */
+        #theme-dark {
+            position: absolute;
+            left: -9999px;
+        }
+        
+        #theme-dark:target ~ .theme-toggle-btn .fa-moon {
+            display: none;
+        }
+        
+        #theme-dark:target ~ .theme-toggle-btn .fa-sun {
+            display: inline;
+        }
+        
+        #theme-light {
+            position: absolute;
+            left: -9999px;
+        }
+        
+        #theme-light:target ~ .theme-toggle-btn .fa-sun {
+            display: none;
+        }
+        
+        #theme-light:target ~ .theme-toggle-btn .fa-moon {
+            display: inline;
+        }
+    </style>
 </head>
 <body>
-    <!-- Loading Animation -->
-    <div class="loader">
-        <div class="loader-content">
-            <div class="loader-spinner"></div>
-            <p>Loading Portfolio</p>
-        </div>
-    </div>
-
+    <!-- Hidden anchor links for CSS-only theme toggle -->
+    <a id="theme-dark" href="#theme-dark"></a>
+    <a id="theme-light" href="#theme-light"></a>
+    
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="logo">AM</a>
+            <a href="#home" class="logo">AM</a>
             <div class="nav-links">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#about" class="nav-link">About</a>
@@ -56,66 +142,64 @@
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#experience" class="nav-link">Experience</a>
                 <a href="#contact" class="nav-link">Contact</a>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+                <a href="#theme-dark" class="theme-toggle-btn">
                     <i class="fas fa-moon"></i>
-                </button>
+                    <i class="fas fa-sun" style="display: none;"></i>
+                </a>
             </div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu">
+            <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle">
+            <label for="mobile-menu-toggle" class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
-            </button>
+            </label>
+            <div class="mobile-menu">
+                <div class="mobile-menu-header">
+                    <a href="#home" class="logo">AM</a>
+                    <label for="mobile-menu-toggle" class="mobile-menu-close">
+                        <i class="fas fa-times"></i>
+                    </label>
+                </div>
+                <div class="mobile-menu-links">
+                    <a href="#home" class="mobile-nav-link">Home</a>
+                    <a href="#about" class="mobile-nav-link">About</a>
+                    <a href="#skills" class="mobile-nav-link">Skills</a>
+                    <a href="#projects" class="mobile-nav-link">Projects</a>
+                    <a href="#experience" class="mobile-nav-link">Experience</a>
+                    <a href="#contact" class="mobile-nav-link">Contact</a>
+                    <div class="mobile-theme-toggle">
+                        <span>Dark Mode</span>
+                        <a href="#theme-dark" class="theme-switch">Off</a>
+                        <a href="#theme-light" class="theme-switch">On</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-header">
-            <a href="#" class="logo">AM</a>
-            <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close mobile menu">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="mobile-menu-links">
-            <a href="#home" class="mobile-nav-link active">Home</a>
-            <a href="#about" class="mobile-nav-link">About</a>
-            <a href="#skills" class="mobile-nav-link">Skills</a>
-            <a href="#projects" class="mobile-nav-link">Projects</a>
-            <a href="#experience" class="mobile-nav-link">Experience</a>
-            <a href="#contact" class="mobile-nav-link">Contact</a>
-            <div class="mobile-theme-toggle">
-                <span>Dark Mode</span>
-                <label class="switch">
-                    <input type="checkbox" id="mobileThemeToggle">
-                    <span class="slider"></span>
-                </label>
-            </div>
-        </div>
-    </div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <p class="hero-subtitle">Hello, I'm</p>
-                <h1 class="hero-title">Alex Morgan</h1>
-                <h2 class="hero-role">Senior Front-End Developer & <span class="highlight">UI/UX Designer</span></h2>
-                <p class="hero-description">
+                <p class="hero-subtitle" style="animation: fadeIn 0.8s ease 0.2s both;">Hello, I'm</p>
+                <h1 class="hero-title" style="animation: fadeIn 0.8s ease 0.4s both;">Alex Morgan</h1>
+                <h2 class="hero-role" style="animation: fadeIn 0.8s ease 0.6s both;">Senior Front-End Developer & <span class="highlight">UI/UX Designer</span></h2>
+                <p class="hero-description" style="animation: fadeIn 0.8s ease 0.8s both;">
                     I create secure, accessible, and performant digital experiences with 8+ years of expertise in modern web technologies and cybersecurity principles.
                 </p>
-                <div class="hero-buttons">
+                <div class="hero-buttons" style="animation: fadeIn 0.8s ease 1s both;">
                     <a href="#projects" class="btn btn-primary">View Projects</a>
                     <a href="#contact" class="btn btn-secondary">Contact Me</a>
                 </div>
             </div>
             <div class="hero-image">
-                <div class="floating-shape shape-1"></div>
-                <div class="floating-shape shape-2"></div>
-                <div class="floating-shape shape-3"></div>
+                <div class="floating-shape shape-1" style="animation: float 6s ease-in-out infinite;"></div>
+                <div class="floating-shape shape-2" style="animation: float 6s ease-in-out infinite 2s;"></div>
+                <div class="floating-shape shape-3" style="animation: float 6s ease-in-out infinite 4s;"></div>
             </div>
         </div>
         <div class="scroll-indicator">
             <span>Scroll Down</span>
             <div class="mouse">
-                <div class="wheel"></div>
+                <div class="wheel" style="animation: scroll 2s infinite;"></div>
             </div>
         </div>
     </section>
@@ -179,7 +263,7 @@
                                 <span>98%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-width="98"></div>
+                                <div class="skill-progress" style="--target-width: 98%; animation: progressBar 1.5s ease forwards 0.2s;"></div>
                             </div>
                         </div>
                         <div class="skill-item">
@@ -188,7 +272,7 @@
                                 <span>96%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-width="96"></div>
+                                <div class="skill-progress" style="--target-width: 96%; animation: progressBar 1.5s ease forwards 0.4s;"></div>
                             </div>
                         </div>
                         <div class="skill-item">
@@ -197,7 +281,7 @@
                                 <span>94%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-width="94"></div>
+                                <div class="skill-progress" style="--target-width: 94%; animation: progressBar 1.5s ease forwards 0.6s;"></div>
                             </div>
                         </div>
                         <div class="skill-item">
@@ -206,7 +290,7 @@
                                 <span>90%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-width="90"></div>
+                                <div class="skill-progress" style="--target-width: 90%; animation: progressBar 1.5s ease forwards 0.8s;"></div>
                             </div>
                         </div>
                     </div>
@@ -221,7 +305,7 @@
                                 <span>95%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-width="95"></div>
+                                <div class="skill-progress" style="--target-width: 95%; animation: progressBar 1.5s ease forwards 1s;"></div>
                             </div>
                         </div>
                         <div class="skill-item">
@@ -230,7 +314,7 @@
                                 <span>92%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-width="92"></div>
+                                <div class="skill-progress" style="--target-width: 92%; animation: progressBar 1.5s ease forwards 1.2s;"></div>
                             </div>
                         </div>
                         <div class="skill-item">
@@ -239,7 +323,7 @@
                                 <span>96%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-width="96"></div>
+                                <div class="skill-progress" style="--target-width: 96%; animation: progressBar 1.5s ease forwards 1.4s;"></div>
                             </div>
                         </div>
                         <div class="skill-item">
@@ -248,7 +332,7 @@
                                 <span>93%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-width="93"></div>
+                                <div class="skill-progress" style="--target-width: 93%; animation: progressBar 1.5s ease forwards 1.6s;"></div>
                             </div>
                         </div>
                     </div>
@@ -263,7 +347,7 @@
                                 <span>91%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-width="91"></div>
+                                <div class="skill-progress" style="--target-width: 91%; animation: progressBar 1.5s ease forwards 1.8s;"></div>
                             </div>
                         </div>
                         <div class="skill-item">
@@ -272,7 +356,7 @@
                                 <span>97%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-width="97"></div>
+                                <div class="skill-progress" style="--target-width: 97%; animation: progressBar 1.5s ease forwards 2s;"></div>
                             </div>
                         </div>
                         <div class="skill-item">
@@ -281,7 +365,7 @@
                                 <span>89%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-width="89"></div>
+                                <div class="skill-progress" style="--target-width: 89%; animation: progressBar 1.5s ease forwards 2.2s;"></div>
                             </div>
                         </div>
                         <div class="skill-item">
@@ -290,7 +374,7 @@
                                 <span>94%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-width="94"></div>
+                                <div class="skill-progress" style="--target-width: 94%; animation: progressBar 1.5s ease forwards 2.4s;"></div>
                             </div>
                         </div>
                     </div>
@@ -327,10 +411,10 @@
                             <span>JWT Auth</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link" aria-label="View SecureBank Dashboard live demo">
+                            <a href="#0" class="project-link">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
-                            <a href="#" class="project-link" aria-label="View SecureBank Dashboard source code on GitHub">
+                            <a href="#0" class="project-link">
                                 <i class="fab fa-github"></i> GitHub
                             </a>
                         </div>
@@ -357,10 +441,10 @@
                             <span>IndexedDB</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link" aria-label="View HealthTrack Pro live demo">
+                            <a href="#0" class="project-link">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
-                            <a href="#" class="project-link" aria-label="View HealthTrack Pro source code on GitHub">
+                            <a href="#0" class="project-link">
                                 <i class="fab fa-github"></i> GitHub
                             </a>
                         </div>
@@ -387,10 +471,10 @@
                             <span>WebSockets</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link" aria-label="View DesignHub Platform live demo">
+                            <a href="#0" class="project-link">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
-                            <a href="#" class="project-link" aria-label="View DesignHub Platform source code on GitHub">
+                            <a href="#0" class="project-link">
                                 <i class="fab fa-github"></i> GitHub
                             </a>
                         </div>
@@ -516,21 +600,21 @@
                         </div>
                     </div>
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Visit my GitHub profile">
+                        <a href="#0" class="social-link">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="Visit my LinkedIn profile">
+                        <a href="#0" class="social-link">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="Follow me on Twitter">
+                        <a href="#0" class="social-link">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="Check out my Dribbble portfolio">
+                        <a href="#0" class="social-link">
                             <i class="fab fa-dribbble"></i>
                         </a>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form" action="#contact" method="get">
                     <div class="form-group">
                         <input type="text" id="name" name="name" placeholder="Your Name" required>
                     </div>
@@ -544,7 +628,9 @@
                         <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
-                    <div class="form-message" id="formMessage"></div>
+                    <div class="form-message">
+                        <!-- Message will appear here on form submit -->
+                    </div>
                 </form>
             </div>
         </div>
@@ -554,16 +640,13 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <a href="#" class="footer-logo">AM</a>
+                <a href="#home" class="footer-logo">AM</a>
                 <p class="footer-text">© 2023 Alex Morgan. All rights reserved.</p>
-                <a href="#home" class="back-to-top" aria-label="Back to top">
+                <a href="#home" class="back-to-top">
                     <i class="fas fa-chevron-up"></i>
                 </a>
             </div>
         </div>
     </footer>
-
-    <!-- JavaScript -->
-    <script src="script.js"></script>
 </body>
 </html>
