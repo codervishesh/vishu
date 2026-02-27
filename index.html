@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vishesh Jain | Software Engineer</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
@@ -27,29 +33,40 @@
         <h1>Hi, I'm <span>Vishesh Jain</span></h1>
         <h2>Aspiring Software Engineer</h2>
         <p>
-            Passionate about Java, Data Structures, SQL  
-            and building scalable problem-solving systems.
+            Proficient in Java, DSA & SQL with a strong passion for
+            problem solving and scalable systems.
         </p>
 
         <div class="hero-buttons">
             <a href="#projects" class="btn primary">View Projects</a>
-            <a href="#contact" class="btn secondary">Hire Me</a>
+            <a href="Vishesh_Jain_Resume.pdf" download class="btn secondary">
+                Download Resume
+            </a>
+        </div>
+
+        <!-- SOCIAL LINKS -->
+        <div class="social-links">
+            <a href="https://github.com/codervishesh" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/your-linkedin-username" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://leetcode.com/your-leetcode-username" target="_blank"><i class="fas fa-code"></i></a>
+            <a href="mailto:vshu1178@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
     </div>
 </header>
 
 <!-- ABOUT -->
-<section class="section" id="about">
+<section class="section reveal" id="about">
     <h2>About Me</h2>
     <p>
-        I am an aspiring Software Engineer currently pursuing B.E. in
-        Computer Science Engineering at Chandigarh University.  
-        I enjoy solving DSA problems and building logical systems.
+        I am currently pursuing B.E. in Computer Science Engineering
+        at Chandigarh University (2023–2027).
+        I actively practice competitive programming and enjoy building
+        efficient and logical software solutions.
     </p>
 </section>
 
 <!-- SKILLS -->
-<section class="section dark" id="skills">
+<section class="section dark reveal" id="skills">
     <h2>Technical Skills</h2>
     <div class="skills">
         <span>Java</span>
@@ -58,35 +75,45 @@
         <span>DSA</span>
         <span>Graphs</span>
         <span>DP</span>
+        <span>Recursion</span>
         <span>Flask</span>
     </div>
 </section>
 
 <!-- PROJECTS -->
-<section class="section" id="projects">
+<section class="section reveal" id="projects">
     <h2>Projects</h2>
 
     <div class="project">
         <h3>Weather Forecasting Web App</h3>
         <p><strong>Tech:</strong> Python, Flask, OpenWeatherMap API</p>
-        <p>Displays real-time weather data using user input.</p>
+        <p>Displays real-time weather data based on user input.</p>
+        <div class="project-links">
+            <a href="#" target="_blank">GitHub</a>
+        </div>
     </div>
 
     <div class="project">
         <h3>E-commerce Recommendation System</h3>
         <p><strong>Tech:</strong> Java, SQL</p>
         <p>Uses HashMaps and Graph algorithms for recommendations.</p>
+        <div class="project-links">
+            <a href="#" target="_blank">GitHub</a>
+        </div>
     </div>
 
     <div class="project">
         <h3>Library Management System</h3>
         <p><strong>Tech:</strong> Java, SQL</p>
         <p>Book issue/return, fine calculation, admin & user login.</p>
+        <div class="project-links">
+            <a href="#" target="_blank">GitHub</a>
+        </div>
     </div>
 </section>
 
 <!-- CONTACT -->
-<section class="section dark" id="contact">
+<section class="section dark reveal" id="contact">
     <h2>Contact Me</h2>
 
     <form>
@@ -100,8 +127,14 @@
     <p>Phone: +91 9610461813</p>
 </section>
 
+<!-- FOOTER -->
 <footer>
-    <p>© 2026 Vishesh Jain | Built with 💻</p>
+    <div class="footer-social">
+        <a href="https://github.com/codervishesh" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/your-linkedin-username" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://leetcode.com/your-leetcode-username" target="_blank"><i class="fas fa-code"></i></a>
+    </div>
+    <p>© 2026 Vishesh Jain | Portfolio Website</p>
 </footer>
 
 <script src="script.js"></script>
