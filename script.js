@@ -7,6 +7,7 @@ if (localStorage.getItem("theme") === "light") {
     toggleBtn.textContent = "☀️";
 }
 
+// Toggle theme
 toggleBtn.addEventListener("click", () => {
     body.classList.toggle("light-mode");
 
@@ -18,3 +19,20 @@ toggleBtn.addEventListener("click", () => {
         toggleBtn.textContent = "🌙";
     }
 });
+
+// Scroll reveal animation
+const reveals = document.querySelectorAll(".reveal");
+
+const revealOnScroll = () => {
+    reveals.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 120) {
+            el.classList.add("active");
+        }
+    });
+};
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
