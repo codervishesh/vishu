@@ -5,29 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vishesh Jain | Software Engineer</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
 <body>
 
-<!-- HERO -->
-<header class="hero">
-    <h1>Vishesh Jain</h1>
-    <p>Aspiring Software Engineer | Java | DSA | SQL</p>
-    <a href="#contact" class="btn">Contact Me</a>
+<!-- HERO + NAVBAR -->
+<header class="hero" id="home">
+    <nav class="navbar">
+        <h2 class="logo">Vishesh<span>.</span></h2>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <button id="theme-toggle" class="theme-btn">🌙</button>
+    </nav>
+
+    <div class="hero-content">
+        <h1>Hi, I'm <span>Vishesh Jain</span></h1>
+        <h2>Aspiring Software Engineer</h2>
+        <p>
+            Passionate about Java, Data Structures, SQL  
+            and building scalable problem-solving systems.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#projects" class="btn primary">View Projects</a>
+            <a href="#contact" class="btn secondary">Hire Me</a>
+        </div>
+    </div>
 </header>
 
 <!-- ABOUT -->
-<section class="section">
+<section class="section" id="about">
     <h2>About Me</h2>
     <p>
-        I am an aspiring Software Engineer passionate about problem solving,
-        scalable systems and competitive programming. Currently pursuing
-        B.E. in Computer Science Engineering at Chandigarh University.
+        I am an aspiring Software Engineer currently pursuing B.E. in
+        Computer Science Engineering at Chandigarh University.  
+        I enjoy solving DSA problems and building logical systems.
     </p>
 </section>
 
 <!-- SKILLS -->
-<section class="section dark">
+<section class="section dark" id="skills">
     <h2>Technical Skills</h2>
     <div class="skills">
         <span>Java</span>
@@ -41,54 +63,36 @@
 </section>
 
 <!-- PROJECTS -->
-<section class="section">
+<section class="section" id="projects">
     <h2>Projects</h2>
 
     <div class="project">
         <h3>Weather Forecasting Web App</h3>
-        <p>Python, Flask, OpenWeatherMap API</p>
-        <p>Real-time weather data based on user input or location.</p>
+        <p><strong>Tech:</strong> Python, Flask, OpenWeatherMap API</p>
+        <p>Displays real-time weather data using user input.</p>
     </div>
 
     <div class="project">
-        <h3>E-commerce Product Recommendation System</h3>
-        <p>Java, SQL</p>
-        <p>Uses HashMaps and Graph algorithms for user-based recommendations.</p>
+        <h3>E-commerce Recommendation System</h3>
+        <p><strong>Tech:</strong> Java, SQL</p>
+        <p>Uses HashMaps and Graph algorithms for recommendations.</p>
     </div>
 
     <div class="project">
         <h3>Library Management System</h3>
-        <p>Java, SQL</p>
+        <p><strong>Tech:</strong> Java, SQL</p>
         <p>Book issue/return, fine calculation, admin & user login.</p>
     </div>
-</section>
-
-<!-- COMPETITIVE -->
-<section class="section dark">
-    <h2>Competitive Programming</h2>
-    <ul>
-        <li>Solved 45+ problems</li>
-        <li>Platforms: LeetCode, HackerRank</li>
-        <li>Topics: Arrays, Trees, Graphs, DP, Bit Manipulation</li>
-    </ul>
-</section>
-
-<!-- EDUCATION -->
-<section class="section">
-    <h2>Education</h2>
-    <p><strong>B.E. Computer Science</strong> (2023–2027)<br>Chandigarh University</p>
-    <p><strong>Intermediate</strong> (2022) – RBSE</p>
-    <p><strong>Matriculation</strong> (2020) – RBSE</p>
 </section>
 
 <!-- CONTACT -->
 <section class="section dark" id="contact">
     <h2>Contact Me</h2>
 
-    <form id="contact-form">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
     </form>
 
