@@ -24,10 +24,6 @@ body {
     z-index: 1000;
 }
 
-.logo {
-    font-size: 1.6rem;
-}
-
 .logo span {
     color: #00c6ff;
 }
@@ -44,7 +40,6 @@ body {
 .navbar ul li a {
     color: white;
     text-decoration: none;
-    transition: 0.3s;
 }
 
 .navbar ul li a:hover {
@@ -80,18 +75,12 @@ body {
     color: #00c6ff;
 }
 
-.hero-content h2 {
-    margin: 10px 0;
-    font-weight: 400;
-}
-
 .hero-content p {
     max-width: 600px;
     margin: auto;
     line-height: 1.6;
 }
 
-/* BUTTONS */
 .hero-buttons {
     margin-top: 25px;
 }
@@ -105,12 +94,29 @@ body {
 
 .primary {
     background: #00c6ff;
-    color: #000;
+    color: black;
 }
 
 .secondary {
     border: 1px solid #00c6ff;
     color: #00c6ff;
+}
+
+/* SOCIAL ICONS */
+.social-links {
+    margin-top: 25px;
+}
+
+.social-links a {
+    color: #00c6ff;
+    font-size: 1.5rem;
+    margin: 0 12px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px);
+    color: white;
 }
 
 /* SECTIONS */
@@ -126,7 +132,7 @@ body {
 .skills span {
     display: inline-block;
     background: #00c6ff;
-    color: #000;
+    color: black;
     margin: 8px;
     padding: 8px 14px;
     border-radius: 20px;
@@ -140,6 +146,12 @@ body {
     border-radius: 8px;
 }
 
+.project-links a {
+    color: #00c6ff;
+    text-decoration: none;
+}
+
+/* FORM */
 form {
     max-width: 400px;
     margin: auto;
@@ -164,6 +176,12 @@ footer {
     padding: 12px;
 }
 
+.footer-social a {
+    color: #00c6ff;
+    font-size: 1.2rem;
+    margin: 0 10px;
+}
+
 /* LIGHT MODE */
 body.light-mode {
     background: #ffffff;
@@ -185,10 +203,16 @@ body.light-mode .navbar ul li a {
 
 body.light-mode .project {
     background: #f4f4f4;
-    color: #111;
 }
 
-body.light-mode footer {
-    background: #ddd;
-    color: #000;
+/* SCROLL ANIMATION */
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
