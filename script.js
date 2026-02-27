@@ -1,19 +1,20 @@
-(function(){
-    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with EmailJS public key
-})();
+const toggleBtn = document.getElementById("theme-toggle");
+const body = document.body;
 
-document.getElementById("contact-form").addEventListener("submit", function(e){
-    e.preventDefault();
+// Load saved theme
+if (localStorage.getItem("theme") === "light") {
+    body.classList.add("light-mode");
+    toggleBtn.textContent = "☀️";
+}
 
-    emailjs.sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        this
-    ).then(() => {
-        alert("Message sent successfully!");
-        this.reset();
-    }, (error) => {
-        alert("Failed to send message");
-        console.log(error);
-    });
+toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("light-mode");
+
+    if (body.classList.contains("light-mode")) {
+        localStorage.setItem("theme", "light");
+        toggleBtn.textContent = "☀️";
+    } else {
+        localStorage.setItem("theme", "dark");
+        toggleBtn.textContent = "🌙";
+    }
 });
